@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML5-Seite mit Grundstruktur</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+  <header>
+      <button id="newnote">Create new Note</button>
+      <select id="selectstyle">
+          <option value="bw">BlackWhite-Style</option>
+          <option value="color">Color Style</option>
+      </select>
+  </header>
+    <nav>
+        <button id="finishdate">By finish Date</button>
+        <button id="createddate">By created Date</button>
+        <button id="importancebutton" onclick="sortimportance()">By Importance</button>
+        <button id="finished">Show finished</button>
+    </nav>
+    <main>
+        <section>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+            <!--This is our template. -->
+            <!--Data will be inserted in its according place, replacing the brackets.-->
+            <script id="notes-template" type="text/x-handlebars-template">
+                {{#each notes}}
+                <ul class="noteslist"><li>{{id}}</li>
+                    <li>{{title}}</li>
+                    <li>{{description}}</li>
+                    <li id="notesimportance">{{importance}}</li>
+                    <li>{{createddate}}</li>
+                    <li>{{finishdate}}</li></ul>  {{/each}}
+            </script>
+
+            <!--Your new content will be displayed in here-->
+            <div class="content-placeholder"></div>
+            </section>
+            </main>
+  <footer>
+  </footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+<script src="javascript_handlebars.js"></script>
+</body>
+</html>

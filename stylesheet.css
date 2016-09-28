@@ -1,0 +1,48 @@
+body {
+font-family: 'Ubuntu', sans-serif;
+}
+header, nav, main, section {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 100%;
+    margin-bottom: 20px;
+}
+.content-placeholder {
+    width: 100%;
+}
+header {
+  justify-content: space-between;
+  flex-direction: row;
+}
+nav {
+  justify-content: space-between;
+  flex-direction: row;
+}
+button  {
+    border: 1px solid black;
+}
+
+nav button {
+    flex: 25%;
+}
+aside, #importancebutton, .edit {
+    flex: 25%;
+}
+article {
+    flex: 50%;
+}
+input[type="text"] {
+    flex: 49%;
+}
+@media screen and (max-width: 768px) {
+    aside, article, button, input[type="text"] {
+        flex: 100%;
+    }
+}
+
+/* handlebars */
+.noteslist {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
