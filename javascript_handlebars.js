@@ -30,7 +30,7 @@ $(function () {
     // Compile the template
     var theTemplate = Handlebars.compile(theTemplateScript);
 
-    // Define our data object
+    // Define our data object (with var context notes)
 
 
     // Pass our data to the template
