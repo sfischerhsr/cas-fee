@@ -1,6 +1,56 @@
 body {
-font-family: 'Ubuntu', sans-serif;
+    font-family: 'Raleway';
+    background-color: #ff7a2f;
+    margin: 0;
 }
+
+header, footer {
+    background-color: #febb8e;
+    display: -webkit-flex;
+    display: flex;
+}
+
+header {
+    border-bottom: 1px solid #febb8e;
+}
+
+#logo {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+#logo img {
+    margin: 20px;
+    width: 100%;
+    max-width: 275px;
+}
+
+#selectstyle {
+    max-height: 30px;
+    align-self: flex-end;
+    background-color: #ff7a2f;
+    border: none;
+    padding: 5px;
+    text-transform: uppercase;
+    color: white;
+}
+
+select {
+    outline: none; /* beim option leider nicht änderbar?! statt mit select eine Liste machen*/
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        display: block;
+    }
+
+    #selectstyle {
+        width: 100%;
+    }
+}
+
+/* vorher
 header, nav, main, section {
     display: flex;
     flex-flow: row wrap;
@@ -46,3 +96,7 @@ input[type="text"] {
     list-style: none;
     justify-content: space-between;
 }
+
+*
+
+/
