@@ -33,20 +33,20 @@ $(function () {
         }
     ];
     /*$(function () {
-    // Grab the template script
-    var theTemplateScript = $("#notes-template").html();
+     // Grab the template script
+     var theTemplateScript = $("#notes-template").html();
 
-    // Compile the template
-    var theTemplate = Handlebars.compile(theTemplateScript);
+     // Compile the template
+     var theTemplate = Handlebars.compile(theTemplateScript);
 
-    // Define our data object (sh. oben var context notes)
+     // Define our data object (sh. oben var context notes)
 
 
-    // Pass our data to the template
-    var theCompiledHtml = theTemplate(context);
+     // Pass our data to the template
+     var theCompiledHtml = theTemplate(context);
 
-    // Add the compiled html to the page
-    $('.content-placeholder').html(theCompiledHtml);
+     // Add the compiled html to the page
+     $('.content-placeholder').html(theCompiledHtml);
      });*/
 
     var currentNotes = notes;
@@ -59,18 +59,18 @@ $(function () {
 
 //add sort and filter
 
-    function comparefinishdate(d1, d2) {
-        if (!Date.parse(d1.finishdate)) {
+    function comparecreateddate(d1, d2) {
+        if (!Date.parse(d1.createddate)) {
             return true;
         }
-        if (!Date.parse(d2.finishdate)) {
+        if (!Date.parse(d2.createddate)) {
             return false;
         }
-        return new Date(d2.finishdate) < new Date(d1.finishdate);
+        return new Date(d2.createddate) < new Date(d1.createddate);
     }
 
-    function comparecreateddate(d1, d2) {
-        return new Date(d2.createddate) < new Date(d1.createddate);
+    function comparefinishdate(d1, d2) {
+        return new Date(d2.finishdate) < new Date(d1.finishdate);
     }
 
     function compareimportance(i1, i2) {
@@ -81,31 +81,52 @@ $(function () {
     $(function () {
         $(".sort").on("click", "input", sortNotes);
         $(".filter").on("click", "input", filterNotes);
+        /*$(".filter2").on("click", "input", filterNotes2);*/
     });
 
+    /*function filterNotes() {
+     if ($('#filter-by-finished:checked').length > 0) {
+     currentNotes = $.grep(notes, function (note) {
+     return note.finished === true;
+     });
+     }
+     else if ($('#filter-by-finished').length > 0) {
+     currentNotes = $.grep(notes, function (note) {
+     return note.finished === false;
+     });
+     }
+     $(".content-placeholder").html(createNotesHtml(currentNotes));
+     }
+     function filterNotes2() {
+     if ($('#filter-by-unfinished:checked').length > 0) {
+     currentNotes = $.grep(notes, function (note) {
+     return note.finished === false;
+     });
+     }
+     else if ($('#filter-by-unfinished').length > 0) {
+     currentNotes = $.grep(notes, function (note) {
+     return note.finished === true;
+     });
+     }
+     $(".content-placeholder").html(createNotesHtml(currentNotes));
+     }*/
     function filterNotes() {
         if ($('#filter-by-finished:checked').length > 0) {
             currentNotes = $.grep(notes, function (note) {
                 return note.finished === true;
             });
-        }
-        else {
+        } else {
             currentNotes = notes;
         }
-    else
-        if ($('#filter-by-unfinished:checked').length > 0) {
-            currentNotes = $.grep(notes, function (note) {
-                return note.finished === false;
-            });
-        }
+
         $(".content-placeholder").html(createNotesHtml(currentNotes));
     }
 
     function sortNotes() {
-        if ($('#sort-by-finish-date:checked').length > 0) {
-            currentNotes = currentNotes.sort(comparefinishdate);
-        } else if ($('#sort-by-created-date:checked').length > 0) {
+        if ($('#sort-by-created-date:checked').length > 0) {
             currentNotes = currentNotes.sort(comparecreateddate);
+        } else if ($('#sort-by-finish-date:checked').length > 0) {
+            currentNotes = currentNotes.sort(comparefinishdate);
         } else if ($('#sort-by-importance:checked').length > 0) {
             currentNotes = currentNotes.sort(compareimportance);
         }
@@ -118,3 +139,8 @@ $(function () {
         sortNotes();
     }
 });
+
+/*$( "label" ).one( "click", function() {
+ $( this ).css( "background-color", "black" );
+ });*/
+

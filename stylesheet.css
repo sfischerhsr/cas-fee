@@ -2,10 +2,17 @@ body {
     font-family: 'Raleway';
     background-color: #ff7a2f;
     margin: 0;
+    font-size: 14px;
 }
 
+p {
+    margin-bottom: 6px;
+}
 header, footer {
     background-color: #febb8e;
+}
+
+header, footer, nav, .sortfilter {
     display: -webkit-flex;
     display: flex;
 }
@@ -26,20 +33,6 @@ header {
     max-width: 275px;
 }
 
-#selectstyle {
-    max-height: 30px;
-    align-self: flex-end;
-    background-color: #ff7a2f;
-    border: none;
-    padding: 5px;
-    text-transform: uppercase;
-    color: white;
-}
-
-select {
-    outline: none; /* beim option leider nicht änderbar?! statt mit select eine Liste machen*/
-}
-
 @media screen and (max-width: 768px) {
     header {
         display: block;
@@ -49,6 +42,63 @@ select {
         width: 100%;
     }
 }
+
+nav, main {
+    margin: 20px;
+}
+
+#selectstyle {
+    max-height: 30px;
+    align-self: flex-end;
+    background-color: #ff7a2f;
+    border: none;
+    padding: 5px;
+    text-transform: uppercase;
+    color: white;
+    margin: 0px;
+}
+
+select {
+    outline: none; /* beim option leider nicht änderbar?! statt mit select eine Liste machen*/
+}
+
+.sort, .filter, #newnote {
+    color: white;
+    text-transform: uppercase;
+}
+
+label {
+    background-color: #9dc5e8;
+    padding: 10px 5px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    display: none;
+}
+
+label:hover {
+    background-color: #febb8e;
+    cursor: crosshair;
+}
+
+#newnote {
+    align-self: flex-end;
+    background-color: #9dc5e8;
+    padding: 10px 5px;
+    margin-top: -10px;
+}
+
+button {
+    border: none;
+}
+
+/* label:active nur während dem der Mausklick erfolgt */
+input:checked + span {
+    background-color: #febb8e;
+    padding: 10px 5px;
+    margin: -5px;
+}
+
 
 /* vorher
 header, nav, main, section {
@@ -96,7 +146,3 @@ input[type="text"] {
     list-style: none;
     justify-content: space-between;
 }
-
-*
-
-/

@@ -17,18 +17,19 @@
       </select>
   </header>
   <nav>
-      <div class="sort">sort<br>
-          <label><input type="radio" id="sort-by-created-date" name="sort-by"><span>created</span></label>
-          <label><input type="radio" id="sort-by-finish-date" name="sort-by" checked><span>finished</span></label>
+      <div class="sortfilter">
+          <div class="sort">
+              <label><input type="radio" id="sort-by-created-date" name="sort-by" checked><span>created</span></label>
+              <label><input type="radio" id="sort-by-finish-date" name="sort-by"><span>finished</span></label>
           <label><input type="radio" id="sort-by-importance" name="sort-by"><span>importance</span></label>
+          </div>
+          <div class="filter">
+              <label><input type="checkbox" id="filter-by-finished" name="filter-by"><span>finished</span></label>
+          </div>
       </div>
-      <div class="filter">filter<br>
-          <label><input type="checkbox" id="filter-by-finished"><span>finished</span></label>
-          <label><input type="checkbox" id="filter-by-unfinished"><span>unfinished</span></label>
+      <div class="new">
+          <div id="newnote"><a href="#">add new</a></div>
       </div>
-
-      <button id="newnote">add new</button>
-
   </nav>
     <main>
         <section>
