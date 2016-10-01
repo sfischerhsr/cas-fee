@@ -3,36 +3,44 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HTML5-Seite mit Grundstruktur</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <title>TO-DO LIST</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="stylesheet.css">
 </head>
 
 <body>
   <header>
-      <button id="newnote">Create new Note</button>
+      <div id="logo"><img src="logo.PNG"/></div>
       <select id="selectstyle">
-          <option value="bw">BlackWhite-Style</option>
-          <option value="color">Color Style</option>
+          <option value="bw">orange</option>
+          <option value="color">blue</option>
       </select>
   </header>
-    <nav>
-        <button id="finishdate">By finish Date</button>
-        <button id="createddate">By created Date</button>
-        <button id="importancebutton" onclick="sortimportance()">By Importance</button>
-        <button id="finished">Show finished</button>
-    </nav>
+  <nav>
+      <div class="sort">sort<br>
+          <label><input type="radio" id="sort-by-created-date" name="sort-by"><span>created</span></label>
+          <label><input type="radio" id="sort-by-finish-date" name="sort-by" checked><span>finished</span></label>
+          <label><input type="radio" id="sort-by-importance" name="sort-by"><span>importance</span></label>
+      </div>
+      <div class="filter">filter<br>
+          <label><input type="checkbox" id="filter-by-finished"><span>finished</span></label>
+          <label><input type="checkbox" id="filter-by-unfinished"><span>unfinished</span></label>
+      </div>
+
+      <button id="newnote">add new</button>
+
+  </nav>
     <main>
         <section>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
             <!--This is our template. -->
             <!--Data will be inserted in its according place, replacing the brackets.-->
-            <script id="notes-template" type="text/x-handlebars-template">
-                {{#each notes}}
+            <script id="notesTemplate" type="text/x-handlebars-template">
+                {{#each this}}
                 <ul class="noteslist"><li>{{id}}</li>
                     <li>{{title}}</li>
                     <li>{{description}}</li>
-                    <li id="notesimportance">{{importance}}</li>
+                    <li>{{importance}}</li>
                     <li>{{createddate}}</li>
                     <li>{{finishdate}}</li></ul>  {{/each}}
             </script>
