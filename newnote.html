@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>TO-DO LIST</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+<div id="wrapper">
+    <header>
+        <div id="logo"><img alt="To-do list logo" src="logo.PNG"/></div>
+        <select id="styleSwitcher">
+            <option value="orange">orange</option>
+            <option value="blue">blue</option>
+        </select>
+    </header>
+    <nav>
+    </nav>
+    <main>
+        <section class="newnotecontent">
+            <div class="newtitle"><h1>Title</h1><input id="newtitleinput"></div>
+            <div class="newdescription"><h1>Description</h1><input id="newdescriptioninput"></div>
+            <div class="newimportance">
+                <input type="radio" id="newimportance1" name="sort-by" checked><span><img alt="importance"
+                                                                                          src="important.png"></span>
+                <input type="radio" id="newimportance2" name="sort-by"><span><img alt="importance" src="important.png"></span>
+                <input type="radio" id="newimportance3" name="sort-by"><span><img alt="importance" src="important.png"></span>
+                <input type="radio" id="newimportance4" name="sort-by"><span><img alt="importance" src="important.png"></span>
+                <label><input type="radio" id="newimportance5" name="sort-by"><span><img alt="importance"
+                                                                                         src="important.png"></span></label>
+            </div>
+            <div id="newfinish"><h1>To do until</h1><input class="datepicker_recurring_start"/></div>
+            <button onclick="send()">Send</button>
+            <button id="cancel">cancel</button>
+            <!-- testing SessionStorage -->
+            <script src="/cas-fee/newnote.js"></script>
+            <!-- end -->
+        </section>
+    </main>
+</div>
+<footer>www.sandrafischer.ch
+</footer>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="datepick/jquery.datepick.css">
+<script type="text/javascript" src="datepick/jquery.plugin.js"></script>
+<script type="text/javascript" src="datepick/jquery.datepick.js"></script>
+<script src="javascript.js"></script>
+</body>
+</html>
