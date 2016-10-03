@@ -5,11 +5,25 @@ body {
     font-size: 14px;
 }
 
+body.blue {
+    background-color: DarkBlue;
+}
 p {
     margin-bottom: 6px;
 }
-header, footer {
+
+a {
+    text-decoration: none;
+}
+
+header {
     background-color: #febb8e;
+    border-bottom: 1px solid #febb8e;
+}
+
+body.blue header {
+    background-color: #9dc5e8;
+    border-bottom: 1px solid #9dc5e8;
 }
 
 header, footer, nav, .sortfilter {
@@ -17,9 +31,6 @@ header, footer, nav, .sortfilter {
     display: flex;
 }
 
-header {
-    border-bottom: 1px solid #febb8e;
-}
 
 #logo {
     width: 100%;
@@ -33,21 +44,7 @@ header {
     max-width: 275px;
 }
 
-@media screen and (max-width: 768px) {
-    header {
-        display: block;
-    }
-
-    #selectstyle {
-        width: 100%;
-    }
-}
-
-nav, main {
-    margin: 20px;
-}
-
-#selectstyle {
+#styleSwitcher {
     max-height: 30px;
     align-self: flex-end;
     background-color: #ff7a2f;
@@ -58,13 +55,30 @@ nav, main {
     margin: 0px;
 }
 
+body.blue #styleSwitcher {
+    background-color: darkblue;
+}
+
 select {
     outline: none; /* beim option leider nicht änderbar?! statt mit select eine Liste machen*/
 }
 
-.sort, .filter, #newnote {
+/* --------- nav-Bereich ------ */
+nav {
+    margin: 30px 20px 20px;
+}
+
+.sortfilter, #newnote {
     color: white;
     text-transform: uppercase;
+}
+
+.sortfilter {
+    width: 100%;
+}
+
+.new {
+    align-self: flex-end;
 }
 
 label {
@@ -81,68 +95,157 @@ label:hover {
     cursor: crosshair;
 }
 
-#newnote {
-    align-self: flex-end;
-    background-color: #9dc5e8;
-    padding: 10px 5px;
-    margin-top: -10px;
+body.blue label:hover {
+    background-color: #f9f0b5;
+    color: black;
 }
 
+#newnote {
+    align-self: flex-end;
+    background-color: #f9f0b5;
+    padding: 10px 5px;
+    color: black;
+    white-space: nowrap;
+}
+
+#newnote:hover {
+    background-color: #febb8e;
+}
+
+body.blue #newnote:hover {
+    background-color: white;
+}
 button {
     border: none;
 }
 
 /* label:active nur während dem der Mausklick erfolgt */
 input:checked + span {
-    background-color: #febb8e;
+    /*background-color: #febb8e;*/
+    color: black;
     padding: 10px 5px;
     margin: -5px;
 }
 
+/* --------- main-Bereich ------- */
+.noteslist {
+    /*display: flex;
+    list-style: none;
+    justify-content: space-between;*/
+    background-color: #febb8e;
+    margin-bottom: 5px;
+    padding: 30px 20px;
+}
 
-/* vorher
-header, nav, main, section {
+body.blue .noteslist {
+    background-color: #9dc5e8;
+}
+
+.border {
+    display: -webkit-flex;
     display: flex;
-    flex-flow: row wrap;
-    flex: 100%;
-    margin-bottom: 20px;
-}
-.content-placeholder {
-    width: 100%;
-}
-header {
-  justify-content: space-between;
-  flex-direction: row;
-}
-nav {
-  justify-content: space-between;
-  flex-direction: row;
-}
-button  {
-    border: 1px solid black;
+    border-bottom: 1px solid white;
+    margin-bottom: 15px;
+    line-height: 20px;
 }
 
-nav button {
-    flex: 25%;
+.finish {
+    width: 100%;
+    align-self: flex-end;
 }
-aside, #importancebutton, .edit {
-    flex: 25%;
+
+.importance img {
+    max-width: 25px;
+    margin-left: 3px;
 }
-article {
-    flex: 50%;
+
+.notescontent {
+    display: -webkit-flex;
+    display: flex;
 }
-input[type="text"] {
-    flex: 49%;
+
+.notesleft {
+    width: 30%;
 }
-@media screen and (max-width: 768px) {
-    aside, article, button, input[type="text"] {
-        flex: 100%;
+
+.notescenter {
+    width: 70%;
+}
+
+.created {
+    color: white;
+}
+
+.editnote {
+    background-color: #f9f0b5;
+    padding: 10px 5px;
+    color: black;
+    text-transform: uppercase;
+    width: 67px;
+    text-align: center;
+}
+
+.editnote:hover {
+    background-color: #ff7a2f;
+}
+
+body.blue .editnote:hover {
+    background-color: white;
+}
+
+/* ------------ footer -------- */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f9f0b5;
+}
+
+#wrapper {
+    min-height: -webkit-calc(100% - 56px); /* Chrome */
+    min-height: -moz-calc(100% - 56px); /* Firefox */
+    min-height: calc(100% - 56px); /* native */
+}
+
+/* ------------ responsive --------- */
+@media screen and (min-width: 408px) {
+    .sort {
+        margin-right: 3px;
+    }
+
+    #newnote {
+        margin-top: -10px;
     }
 }
 
-/* handlebars */
-.noteslist {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
+@media screen and (max-width: 768px) {
+    header, nav, .notescontent {
+        display: block;
+    }
+
+    #styleSwitcher {
+        width: 100%;
+    }
 }
+
+@media screen and (min-width: 407px) and (max-width: 768px) {
+    .new {
+        margin-top: 30px;
+        max-width: 76px;
+    }
+}
+
+@media screen and (max-width: 406px) {
+    label, .sortfilter {
+        display: block;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+}
+
+

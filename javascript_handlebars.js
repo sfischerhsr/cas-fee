@@ -13,7 +13,7 @@ $(function () {
             "description": "HTML für die note App erstellen",
             "importance": 2,
             "createddate": "2016-09-27",
-            "finishdate": "2016-10-03"
+            "finishdate": "2016-11-03"
         }, {
             "id": 2,
             "finished": true,
@@ -29,7 +29,7 @@ $(function () {
             "description": "888 888 88 88",
             "importance": 4,
             "createddate": "2016-09-29",
-            "finishdate": "2016-10-02"
+            "finishdate": "2016-11-02"
         }
     ];
     /*$(function () {
@@ -140,7 +140,46 @@ $(function () {
     }
 });
 
-/*$( "label" ).one( "click", function() {
- $( this ).css( "background-color", "black" );
- });*/
+/* ------ Style Switcher ----- */
 
+
+function addEvent(obj, type, fn) {
+    if (obj.attachEvent) {
+        obj['e' + type + fn] = fn;
+        obj[type + fn] = function () {
+            obj['e' + type + fn](window.event);
+        }
+        obj.attachEvent('on' + type, obj[type + fn]);
+    } else obj.addEventListener(type, fn, false);
+}
+
+function trigger(action, el) {
+    if (document.createEvent) {
+        var event = document.createEvent('HTMLEvents');
+        event.initEvent(action, true, false);
+        el.dispatchEvent(event);
+    } else {
+        el.fireEvent('on' + action);
+    }
+}
+
+function switchStyles() {
+    var selectedOption = this.options[this.selectedIndex],
+        className = selectedOption.value;
+
+    document.body.className = className;
+    localStorage.setItem("bodyClassName", className);
+}
+
+var styleSwitcher = document.getElementById("styleSwitcher");
+addEvent(styleSwitcher, "change", switchStyles);
+
+var storedClassName = localStorage.getItem("bodyClassName");
+if (storedClassName) {
+    for (var i = 0; i < styleSwitcher.options.length; i++) {
+        if (styleSwitcher.options[i].value === storedClassName) {
+            styleSwitcher.selectedIndex = i;
+            trigger("change", styleSwitcher);
+        }
+    }
+}

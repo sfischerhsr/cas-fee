@@ -9,11 +9,12 @@
 </head>
 
 <body>
+<div id="wrapper">
   <header>
       <div id="logo"><img src="logo.PNG"/></div>
-      <select id="selectstyle">
-          <option value="bw">orange</option>
-          <option value="color">blue</option>
+      <select id="styleSwitcher">
+          <option value="orange">orange</option>
+          <option value="blue">blue</option>
       </select>
   </header>
   <nav>
@@ -28,7 +29,9 @@
           </div>
       </div>
       <div class="new">
-          <div id="newnote"><a href="#">add new</a></div>
+          <a href="#">
+              <div id="newnote">add new</div>
+          </a>
       </div>
   </nav>
     <main>
@@ -38,19 +41,36 @@
             <!--Data will be inserted in its according place, replacing the brackets.-->
             <script id="notesTemplate" type="text/x-handlebars-template">
                 {{#each this}}
-                <ul class="noteslist"><li>{{id}}</li>
-                    <li>{{title}}</li>
-                    <li>{{description}}</li>
-                    <li>{{importance}}</li>
-                    <li>{{createddate}}</li>
-                    <li>{{finishdate}}</li></ul>  {{/each}}
+
+                <div class="noteslist">
+                    <div class="border">
+                        <div class="finish">{{finishdate}}</div>
+                        {{#times importance}}
+                        <span class="importance"><img src="important.png"></span>
+                        {{/times}}
+                    </div>
+                    <div class="notescontent">
+                        <div class="notesleft">
+                            <div class="title">{{title}}</div>
+                            <div class="created">{{createddate}}</div>
+                        </div>
+                        <div class="notescenter"><textarea class="description">{{description}}</textarea></div>
+                        <div class="edit">
+                            <a href="#">
+                                <div class="editnote">edit</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
             </script>
 
             <!--Your new content will be displayed in here-->
             <div class="content-placeholder"></div>
             </section>
-            </main>
-  <footer>
+    </main>
+</div>
+<footer>www.sandrafischer.ch
   </footer>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 <script src="javascript_handlebars.js"></script>
