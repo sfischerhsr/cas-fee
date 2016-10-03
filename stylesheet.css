@@ -172,7 +172,7 @@ body.blue .noteslist {
     width: 70%;
 }
 
-.created {
+.created, #created {
     color: white;
 }
 
@@ -190,6 +190,39 @@ body.blue .noteslist {
 }
 
 body.blue .editnote:hover {
+    background-color: white;
+}
+
+/* -------- main-Bereich newnote ------ */
+/*#newimportance4 + span {
+    background-image: url("important.png");
+}*/
+h1 {
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.newnotecontent {
+    padding: 0px 20px;
+}
+
+#save, #cancel {
+    background-color: #f9f0b5;
+    padding: 10px 5px;
+    color: black;
+    text-transform: uppercase;
+    width: 67px;
+    text-align: center;
+}
+
+#save:hover, #cancel:hover {
+    background-color: #febb8e;
+    cursor: pointer;
+}
+
+body.blue #save:hover, body.blue #cancel:hover {
     background-color: white;
 }
 

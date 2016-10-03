@@ -1,3 +1,21 @@
+function updateTime() {
+    var date = new Date();
+    var stunden = date.getHours();
+    var minuten = date.getMinutes();
+    var tag = date.getDate();
+    var monatDesJahres = date.getMonth();
+    var jahr = date.getFullYear();
+    var tagInWoche = date.getDay();
+    var wochentag = new Array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
+    var monat = new Array("Januar", "Februar", "M&auml;rz", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember");
+
+    var datum = tag + ". " + monat[monatDesJahres] + " " + jahr;
+
+    document.getElementById("created").innerHTML = datum;
+    setTimeout(updateTime, 60000);
+}
+window.addEventListener("load", updateTime);
+
 $(function () {
     Handlebars.registerHelper('times', function (n, block) {
         var accum = '';
@@ -184,3 +202,14 @@ if (storedClassName) {
         }
     }
 }
+
+
+/* -------- datepicker ----- */
+$('#cmd').click(function () {
+    $('#newfinish').append('<br>a datepicker <input class="datepicker_recurring_start"/>');
+});
+$('body').on('focus', ".datepicker_recurring_start", function () {
+    $(this).datepick();
+});
+
+
