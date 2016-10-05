@@ -6,9 +6,9 @@ function send() {
     newdescriptioninput.push(document.getElementById("newdescriptioninput").value);
     localStorage.setItem("newdescriptioninput", JSON.stringify(newdescriptioninput));
     window.location = '/cas-fee/index.html';
-};
+}
 
 /* ------- zurück-button (cancel) ----- */
 document.getElementById("cancel").onclick = function () {
     window.history.back();
-}
+};
