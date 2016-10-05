@@ -25,3 +25,12 @@ created = JSON.parse(created);
 
 document.getElementById("created").innerHTML = created.length == 0 ? "none" : created.join("</br>");
 
+/*var datepicker_recurring_start = localStorage.getItem("datepicker_recurring_start");
+ if (!datepicker_recurring_start) {
+ localStorage.setItem("datepicker_recurring_start", JSON.stringify([]));
+ datepicker_recurring_start = localStorage.getItem("datepicker_recurring_start");
+ }
+ datepicker_recurring_start = JSON.parse(datepicker_recurring_start);
+
+ document.getElementsByClassName("datepicker_recurring_start").innerHTML = datepicker_recurring_start.length == 0 ? "none" : datepicker_recurring_start.join("</br>"); geht nicht */
+

@@ -208,7 +208,7 @@ h1 {
     padding: 0px 20px;
 }
 
-#save, #cancel {
+#save, #cancel, #send {
     background-color: #f9f0b5;
     padding: 10px 5px;
     color: black;
@@ -217,12 +217,12 @@ h1 {
     text-align: center;
 }
 
-#save:hover, #cancel:hover {
+#save:hover, #cancel:hover, #send:hover {
     background-color: #febb8e;
     cursor: pointer;
 }
 
-body.blue #save:hover, body.blue #cancel:hover {
+body.blue #save:hover, body.blue #cancel:hover, body.blue #send:hover {
     background-color: white;
 }
 

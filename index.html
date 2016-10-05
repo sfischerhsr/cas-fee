@@ -12,7 +12,7 @@
 <div id="wrapper">
     <header>
         <div id="logo"><img alt="To-do list logo" src="logo.PNG"/></div>
-        <select id="styleSwitcher">
+        <select id="styleSwitcher" title="switch styles">
             <option value="orange">orange</option>
             <option value="blue">blue</option>
         </select>
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="new">
-            <a href="/cas-fee/newnote.html">
+            <a href="newnote.html">
                 <div id="newnote">add new</div>
             </a>
         </div>
@@ -54,7 +54,8 @@
                             <div class="title">{{title}}</div>
                             <div class="created">{{createddate}}</div>
                         </div>
-                        <div class="notescenter"><textarea class="description">{{description}}</textarea></div>
+                        <div class="notescenter"><textarea class="description"
+                                                           title="description">{{description}}</textarea></div>
                         <div class="edit">
                             <a href="#">
                                 <div class="editnote">edit</div>
@@ -72,7 +73,7 @@
     <!-- testing SessionStorage -->
     <div class="noteslist">
         <div class="border">
-            <div id="newfinish"><input class="is-datepick"></div>
+            <div id="newfinish"><input class="is-datepick" title="datepick"></div>
             <span class="importance"><img alt="importance" src="important.png"></span>
         </div>
         <div class="notescontent">
@@ -84,6 +85,7 @@
             </div>
             <div class="notescenter">
                 <div id="newdescriptioninput"></div>
+                <div class="datepicker_recurring_start"></div>
             </div>
             <div class="edit">
                 <a href="#">
@@ -98,7 +100,7 @@
 </div>
 <footer>www.sandrafischer.ch
 </footer>
-<script src="/cas-fee/index.js"></script>
+<script src="index.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="javascript.js"></script>

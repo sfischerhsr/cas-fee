@@ -13,8 +13,9 @@ function updateTime() {
 
     document.getElementById("created").innerHTML = datum;
     setTimeout(updateTime, 60000);
+    window.addEventListener("load", updateTime);
 }
-window.addEventListener("load", updateTime);
+
 
 $(function () {
     Handlebars.registerHelper('times', function (n, block) {

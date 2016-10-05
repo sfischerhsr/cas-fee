@@ -12,7 +12,7 @@
 <div id="wrapper">
     <header>
         <div id="logo"><img alt="To-do list logo" src="logo.PNG"/></div>
-        <select id="styleSwitcher">
+        <select id="styleSwitcher" title="switch style">
             <option value="orange">orange</option>
             <option value="blue">blue</option>
         </select>
@@ -35,13 +35,14 @@
                                                                                                        src="important.png"></span>
                 <label><input type="radio" id="newimportance5" title="Importance 5" name="sort-by"><span><img
                         alt="importance"
-                                                                                         src="important.png"></span></label>
+                        src="important.png"></span></label>
             </div>
-            <div id="newfinish"><h1>To do until</h1><input class="datepicker_recurring_start"/></div>
-            <button onclick="send()">Send</button>
+            <div id="newfinish"><h1>To do until</h1><input title="to do until" class="datepicker_recurring_start"/>
+            </div>
+            <button id="send">send</button>
             <button id="cancel">cancel</button>
             <!-- testing SessionStorage -->
-            <script src="/cas-fee/newnote.js"></script>
+            <script src="newnote.js"></script>
             <!-- end -->
         </section>
     </main>
