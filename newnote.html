@@ -21,26 +21,34 @@
     </nav>
     <main>
         <section class="newnotecontent">
-            <div class="newtitle"><h1>Title</h1><input id="newtitleinput" title="new title"></div>
-            <div class="newdescription"><h1>Description</h1><input id="newdescriptioninput" title="new description">
+            <form method="post" id="formnewnote">
+                <div class="newtitle"><h1>Title</h1><input type="text" id="newtitleinput" placeholder="Title"
+                                                           title="new title" name="new title" required></div>
+                <div class="newdescription"><h1>Description</h1><input type="text" required id="newdescriptioninput"
+                                                                       title="new description">
             </div>
-            <div class="newimportance">
-                <input type="radio" id="newimportance1" title="Importance 1" name="sort-by" checked><span><img
-                    alt="importance" src="important.png"></span>
-                <input type="radio" id="newimportance2" title="Importance 2" name="sort-by"><span><img alt="importance"
-                                                                                                       src="important.png"></span>
-                <input type="radio" id="newimportance3" title="Importance 3" name="sort-by"><span><img alt="importance"
-                                                                                                       src="important.png"></span>
-                <input type="radio" id="newimportance4" title="Importance 4" name="sort-by"><span><img alt="importance"
-                                                                                                       src="important.png"></span>
-                <label><input type="radio" id="newimportance5" title="Importance 5" name="sort-by"><span><img
-                        alt="importance"
-                        src="important.png"></span></label>
+                <!-- <div class="newimportance">
+                    <input type="radio" id="newimportance1" title="Importance 1" name="sort-by" checked><span><img
+                        alt="importance" src="important.png"></span>
+                    <input type="radio" id="newimportance2" title="Importance 2" name="sort-by"><span><img alt="importance"
+                                                                                                           src="important.png"></span>
+                    <input type="radio" id="newimportance3" title="Importance 3" name="sort-by"><span><img alt="importance"
+                                                                                                           src="important.png"></span>
+                    <input type="radio" id="newimportance4" title="Importance 4" name="sort-by"><span><img alt="importance"
+                                                                                                           src="important.png"></span>
+                    <label><input type="radio" id="newimportance5" title="Importance 5" name="sort-by"><span><img
+                            alt="importance"
+                            src="important.png"></span></label>
+                </div> -->
+                <div id="rateYo"><input type="hidden" value="1" name="rateyoid" id="rateyoid">
             </div>
-            <div id="newfinish"><h1>To do until</h1><input title="to do until" class="datepicker_recurring_start"/>
+                <div id="newfinish"><h1>To do until</h1><input required title="to do until"
+                                                               class="datepicker_recurring_start"/>
             </div>
-            <button id="send">send</button>
-            <button id="cancel">cancel</button>
+                <div id="created"></div>
+                <button type="submit" id="send">send</button>
+                <button type="reset" id="cancel">cancel</button>
+            </form>
             <!-- testing SessionStorage -->
             <script src="newnote.js"></script>
             <!-- end -->
@@ -51,6 +59,8 @@
 </footer>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
 <link rel="stylesheet" type="text/css" href="datepick/jquery.datepick.css">
 <script type="text/javascript" src="datepick/jquery.plugin.js"></script>
 <script type="text/javascript" src="datepick/jquery.datepick.js"></script>
